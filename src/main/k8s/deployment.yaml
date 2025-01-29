@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: spring-rag
+    version: "1.0"
+  name: spring-rag
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+          app: spring-rag
+    template:
+        metadata:
+          labels:
+              app: spring-rag
+        spec:
+          containers:
+            - image: jiveoff/spring-rag:latest
+              name: spring-rag
+              ports:
+                - containerPort: 8080
+              resources: {}
