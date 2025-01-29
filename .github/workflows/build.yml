@@ -98,4 +98,5 @@ jobs:
           echo "Hello, World!"
       - name: kubectl test
         uses: actions-hub/kubectl@master
-        run: kubectl get pods -A
+        with:
+          args: get pods -A
